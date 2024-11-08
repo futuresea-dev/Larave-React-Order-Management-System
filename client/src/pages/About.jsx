@@ -92,7 +92,7 @@ const About = () => {
                                 ideas into reality, and we are committed to guiding you on your journey through the
                                 fascinating world of technology.
                                 At Future Shop, customer satisfaction is at the heart of everything we do. Our
-                                knowledgeable staff is always on hand to assist you in selecting the right products and
+                                knowledgeable staff is always on hand to assist you in selecting the right orders and
                                 answering any questions you may have. We pride ourselves on delivering personalized
                                 service, ensuring that you're not just another sale but a valued member of our
                                 community.

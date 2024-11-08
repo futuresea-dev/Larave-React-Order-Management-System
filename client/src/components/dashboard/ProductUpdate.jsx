@@ -19,6 +19,7 @@ const ProductUpdate = () => {
   const loading = useSelector((state) => state.ui.updateProductLoading);
   const dispatch = useDispatch();
 
+
   const formik = useFormik({
     initialValues: {
       name: product.name,
@@ -45,6 +46,8 @@ const ProductUpdate = () => {
           text: `Product: ${values.name} UPDATED!`,
           icon: "success",
           button: "OK!",
+        }).then(() => {
+            navigate("/admin/dashboard/updateproducts");
         });
         
       } catch (error) {
@@ -71,7 +74,7 @@ const ProductUpdate = () => {
             {/* name input */}
             <div className="flex flex-col space-y-1 mb-8">
               <label htmlFor="name" className="tracking-wider">
-                Product name:
+                Order name:
               </label>
               <input
                 type="text"
@@ -249,7 +252,7 @@ const ProductUpdate = () => {
               type="submit"
               className="px-4 py-2 block my-12 ml-auto font-bold uppercase text-secondary-100 border border-secondary-100 hover:text-white hover:bg-secondary-100 rounded-md"
             >
-              Update Product
+              Update Order
             </button>
             }
           </form>

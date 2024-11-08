@@ -9,8 +9,8 @@ const TheServices = () => {
             <div className="xl:w-[85%] mx-auto">
 
                 <div className="flex justify-between mb-12">
-                    <h3 className="text-3xl text-[#453227] capitalize tracking-wide font-semibold w-1/2">explore our top products <br /> and find something new</h3>
-                    <p className="w-1/2 leading-relaxed text-[#795744]">We’re excited to showcase our curated selection of top products designed to elevate your computing experience. Whether you’re a gamer seeking the ultimate rig, a professional in need of efficient workstations, or a casual user looking for a reliable laptop, we have something for everyone. </p>
+                    <h3 className="text-3xl text-[#453227] capitalize tracking-wide font-semibold w-1/2">explore our top orders <br /> and find something new</h3>
+                    <p className="w-1/2 leading-relaxed text-[#795744]">We’re excited to showcase our curated selection of top orders designed to elevate your computing experience. Whether you’re a gamer seeking the ultimate rig, a professional in need of efficient workstations, or a casual user looking for a reliable laptop, we have something for everyone. </p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 text-center">
@@ -18,7 +18,7 @@ const TheServices = () => {
                     <div className="flex flex-col items-center bg-[#c5a491] py-12 px-8 rounded">
                         <span className="flex justify-center items-center w-16 h-16 mb-4 rounded-full text-3xl bg-[#eaded7]"><GiCompass /></span>
                         <h4 className="capitalize text-2xl mb-3 font-bold">mission</h4>
-                        <p className="leading-relaxed text-[#5f4435]">Our mission is to empower individuals and businesses by providing innovative technology solutions that enhance productivity, creativity, and overall digital experiences. We strive to deliver a diverse range of high-quality products combined with exceptional customer service, making technology accessible and enjoyable for everyone.
+                        <p className="leading-relaxed text-[#5f4435]">Our mission is to empower individuals and businesses by providing innovative technology solutions that enhance productivity, creativity, and overall digital experiences. We strive to deliver a diverse range of high-quality orders combined with exceptional customer service, making technology accessible and enjoyable for everyone.
                         </p>
                     </div>
 

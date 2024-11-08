@@ -137,7 +137,7 @@ const MainNavigation = () => {
                 className="ml-2 p-2 lg:text-lg font-semibold"
                 to="/products"
               >
-                Products
+                Orders
               </NavLink>
             </li>
             <li>
@@ -203,7 +203,7 @@ const MainNavigation = () => {
         </li>
         <li className="border-b-2 border-zinc-300 w-full mt-4 text-lg font-semibold text-gray-600">
           <NavLink to="/products" onClick={navHandler}>
-            Products
+            Orders
           </NavLink>
         </li>
         <li className="border-b-2 border-zinc-300 w-full mt-4 text-lg font-semibold text-gray-600">

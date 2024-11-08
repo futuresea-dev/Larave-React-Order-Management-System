@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import swal from "sweetalert";
+import { useNavigate  } from 'react-router-dom';
 // import Dropzone from "react-dropzone";
 // import { useDropzone } from 'react-dropzone';
 
@@ -12,6 +13,7 @@ import { addProduct } from "../../store/actions/products-actions";
 import TheSpinner from "../../layout/TheSpinner";
 
 const AddProduct = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token);
   const loading = useSelector((state) => state.ui.addPrductLoading);
@@ -85,8 +87,11 @@ const AddProduct = () => {
           text: `Product: ${values.name} CREATED!`,
           icon: "success",
           button: "OK!",
+        }).then(() => {
+          // navigate(window.location.pathname); // Change the path as needed
+          window.location.reload()
         });
-        
+
       } catch (error) {
         console.log(error);
       }
@@ -109,7 +114,7 @@ const AddProduct = () => {
           <IoMdAddCircle />
         </span>
         <h2 className="uppercase text-4xl tracking-widest font-semibold">
-          Add product
+          Add Order
         </h2>
       </div>
       <div className="flex m-4 p-8 bg-white shadow-lg">
@@ -118,7 +123,7 @@ const AddProduct = () => {
             {/* name input */}
             <div className="flex flex-col space-y-1 mb-8">
               <label htmlFor="name" className="tracking-wider">
-                Product name:
+                Order name:
               </label>
               <input
                 type="text"
@@ -373,7 +378,7 @@ const AddProduct = () => {
               type="submit"
               className="px-4 py-2 block mt-3 ml-auto text-primary border border-primary hover:text-white hover:bg-primary rounded-md"
             >
-              Create Product
+              Create
             </button>
             }
           </form>

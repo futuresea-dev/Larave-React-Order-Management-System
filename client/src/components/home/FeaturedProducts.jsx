@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
     return (
         <div className='w-[80vw] mx-auto py-40 text-center'>
             <div className='text-center'>
-                <h2 className='text-4xl capitalize tracking-widest mb-3 font-bold leading-none'>Featured Products</h2>
+                <h2 className='text-4xl capitalize tracking-widest mb-3 font-bold leading-none'>Featured Orders</h2>
                 <div className='w-24 h-1 bg-secondary-200 mx-auto'></div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 my-16'>

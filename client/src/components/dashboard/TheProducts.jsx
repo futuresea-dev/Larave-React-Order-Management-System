@@ -33,7 +33,7 @@ const TheProducts = () => {
                     <AiOutlineUnorderedList/>
                 </span>
                 <h2 className="uppercase text-4xl tracking-widest font-semibold">
-                    The Products
+                    The Orders
                 </h2>
             </div>
             <div className='bg-white mx-4 p-8 shadow-lg space-y-12'>

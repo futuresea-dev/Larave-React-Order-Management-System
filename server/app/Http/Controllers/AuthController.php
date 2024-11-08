@@ -16,9 +16,15 @@ class AuthController extends Controller
             'name' => 'required|string',
             'role' => 'string',
             'email' => 'required|email',
-            'password' => 'required|confirmed'
+            'password' => [
+                'required',
+                'confirmed',
+                'min:5', // Minimum of 5 characters
+                'regex:/[A-Z]/', // At least one uppercase letter
+                'regex:/[a-z]/', // At least one lowercase letter
+                'regex:/[0-9]/', // At least one numeric digit
+            ],
         ]);
-
         $user = new User();
         $user->name = $fields['name'];
         $user->email = $fields['email'];

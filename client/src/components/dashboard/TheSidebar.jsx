@@ -33,15 +33,15 @@ const TheSidebar = () => {
                 </Link>
                 <Link to='/admin/dashboard/products' className='border-b-2 pb-3 border-gray-500'>
                     <span className='inline-flex mr-3 text-primary'><MdViewList /> </span>
-                    List Products
+                    List Orders
                 </Link>
                 <Link to='/admin/dashboard/addproduct' className='border-b-2 pb-3 border-gray-500'>
                     <span className='inline-flex mr-3 text-primary'><MdAddCircle /> </span>
-                    Add Product
+                    Add Order
                 </Link>
                 <Link to='/admin/dashboard/updateproducts' className='border-b-2 pb-3 border-gray-500'>
                     <span className='inline-flex mr-3 text-primary'><MdUpdate /> </span>
-                    Update Product
+                    Update Order
                 </Link>
             </div>
             <div className='mt-auto mb-8'>
