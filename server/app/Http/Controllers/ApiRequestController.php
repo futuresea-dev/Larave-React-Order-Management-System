@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\RequestLog;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ApiRequestController extends Controller
 {
-    public function getRequestCounts()
+    public function getRequestCounts(): \Illuminate\Http\JsonResponse
     {
         $user = auth()->user();
 
@@ -28,7 +29,7 @@ class ApiRequestController extends Controller
         // Optionally, you can count the requests by endpoint
         $countByEndpointLastDay = RequestLog::where('user_id', $user->id)
             ->where('created_at', '>=', $oneDayAgo)
-            ->select('endpoint', \DB::raw('count(*) as count'))
+            ->select('endpoint', DB::raw('count(*) as count'))
             ->groupBy('endpoint')
             ->get();
 

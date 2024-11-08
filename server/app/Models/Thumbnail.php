@@ -13,7 +13,8 @@ class Thumbnail extends Model
         'thumbnail',
     ];
 
-    public function product() {
+    public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(Product::class);
     }
 }

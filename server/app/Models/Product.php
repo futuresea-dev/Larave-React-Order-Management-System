@@ -21,11 +21,13 @@ class Product extends Model
     ];
 
 
-    public function images() {
+    public function images(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(Image::class);
     }
 
-    public function thumbnail() {
+    public function thumbnail(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
         return $this->hasOne(Thumbnail::class);
     }
 
