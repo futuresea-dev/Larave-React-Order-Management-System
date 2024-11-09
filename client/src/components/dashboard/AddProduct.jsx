@@ -94,15 +94,6 @@ const AddProduct = () => {
     },
   });
 
-  // const onDrop = useCallback((acceptedFiles) => {
-  //   if (acceptedFiles.length !== 4) {
-  //     return;
-  //   }
-  //   formik.setFieldValue("images", formik.values.images.concat(acceptedFiles))
-  // }, [formik])
-
-  // const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop});
-
   return (
     <div>
       <div className="flex items-center mx-4 my-8 p-8 bg-white shadow-2xl drop-shadow-md">
@@ -277,21 +268,6 @@ const AddProduct = () => {
                 </p>
               )}
             </div>
-            {/* shipping input */}
-            {/*<div className="flex items-center space-x-3 mb-8">*/}
-            {/*  <input*/}
-            {/*    type="checkbox"*/}
-            {/*    name="shipping"*/}
-            {/*    id="shipping"*/}
-            {/*    onChange={() => formik.setFieldValue('shipping', !formik.values.shipping)}*/}
-            {/*    value={formik.values.shipping}*/}
-            {/*    className="form-checkbox"*/}
-            {/*  />*/}
-            {/*  <label htmlFor="shipping" className="tracking-wider">*/}
-            {/*    Free shipping*/}
-            {/*  </label>*/}
-            {/*</div>*/}
-            {/* thumbnail input */}
             <div className="flex flex-col space-y-1 mb-8">
               <label htmlFor="thumbnail" className="tracking-wider">
                 Thumbnail:
@@ -301,16 +277,6 @@ const AddProduct = () => {
                 name="thumbnail"
                 id="thumbnail"
                 accept="image/*"
-                // onChange={(event) => {
-                //   formik.setFieldValue("thumbnail", () => {
-                //     const fd = new FormData();
-                //     fd.append('thumbnail', event.currentTarget.files[0]);
-                //     return fd;
-                //   });
-                // }}
-                // onChange={(event) => {
-                //   formik.setFieldValue('thumbnail', event.target.files[0]);
-                // }}
                 onChange={(e) => thumbnailHandler(e.target.files[0])}
                 className="w-full"
               />
@@ -330,43 +296,10 @@ const AddProduct = () => {
                 name="images[]"
                 id="images"
                 accept="image/*"
-                // onChange={(event) => {
-                //   // formik.setFieldValue("images", event.currentTarget.files)
-                //   formik.setFieldValue("images", () => {
-                //     const fd = new FormData();
-                //     fd.append('images', event.target.files);
-                //     return fd;
-                //   })
-                // }}
                 onChange={imagesHandler}
                 multiple
               />
               <p className="text-xs">Upload 4 images *</p>
-              {/* <div className="w-full h-auto bg-gray-500" {...getRootProps()} >
-                <input {...getInputProps()} />
-                {
-                  isDragActive ?
-                  <p>Drop the images here ...</p> :
-                  <p>Drag 'n' Drop 4 images here, or click the select images</p>
-                }
-              </div> */}
-              {/* <Dropzone className="w-full h-auto rounded" accept="image/*" onDrop={(acceptedFiles) => {
-                    if (acceptedFiles.length === 0) {
-                        return;
-                    }
-                    formik.setFieldValue('images', formik.values.images.concat(acceptedFiles))
-                }}>
-                    {() => {
-                        if (formik.values.images.length === 0) {
-                            return <p>Upload 4 product images</p>
-                        }
-                    }}
-                </Dropzone> */}
-              {/* {formik.touched.thumbnail && formik.errors.thumbnail && (
-                <p className="text-xs font-semibold text-red-500">
-                  {formik.errors.thumbnail}
-                </p>
-              )} */}
             </div>
             <hr />
             {loading ? <TheSpinner /> : 
