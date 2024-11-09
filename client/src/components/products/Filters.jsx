@@ -117,17 +117,17 @@ const Filters = ({ filters }) => {
           />
         </div>
         {/* shipping */}
-        <div className="mb-6">
-          <label htmlFor="">Free Shipping</label>
-          <input
-            type="checkbox"
-            name="shipping"
-            id="shipping"
-            checked={filters.shipping}
-            onChange={updateFilters}
-            className="form-checkbox cursor-pointer ml-2"
-          />
-        </div>
+        {/*<div className="mb-6">*/}
+        {/*  <label htmlFor="">Free Shipping</label>*/}
+        {/*  <input*/}
+        {/*    type="checkbox"*/}
+        {/*    name="shipping"*/}
+        {/*    id="shipping"*/}
+        {/*    checked={filters.shipping}*/}
+        {/*    onChange={updateFilters}*/}
+        {/*    className="form-checkbox cursor-pointer ml-2"*/}
+        {/*  />*/}
+        {/*</div>*/}
       </form>
       <button
         type="button"

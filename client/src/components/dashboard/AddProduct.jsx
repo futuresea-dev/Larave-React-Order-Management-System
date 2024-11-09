@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import swal from "sweetalert";
-import { useNavigate  } from 'react-router-dom';
-// import Dropzone from "react-dropzone";
-// import { useDropzone } from 'react-dropzone';
 
 import { FaDollarSign } from "react-icons/fa";
 import { IoMdAddCircle } from "react-icons/io";
@@ -13,7 +10,6 @@ import { addProduct } from "../../store/actions/products-actions";
 import TheSpinner from "../../layout/TheSpinner";
 
 const AddProduct = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token);
   const loading = useSelector((state) => state.ui.addPrductLoading);
@@ -282,19 +278,19 @@ const AddProduct = () => {
               )}
             </div>
             {/* shipping input */}
-            <div className="flex items-center space-x-3 mb-8">
-              <input
-                type="checkbox"
-                name="shipping"
-                id="shipping"
-                onChange={() => formik.setFieldValue('shipping', !formik.values.shipping)}
-                value={formik.values.shipping}
-                className="form-checkbox"
-              />
-              <label htmlFor="shipping" className="tracking-wider">
-                Free shipping
-              </label>
-            </div>
+            {/*<div className="flex items-center space-x-3 mb-8">*/}
+            {/*  <input*/}
+            {/*    type="checkbox"*/}
+            {/*    name="shipping"*/}
+            {/*    id="shipping"*/}
+            {/*    onChange={() => formik.setFieldValue('shipping', !formik.values.shipping)}*/}
+            {/*    value={formik.values.shipping}*/}
+            {/*    className="form-checkbox"*/}
+            {/*  />*/}
+            {/*  <label htmlFor="shipping" className="tracking-wider">*/}
+            {/*    Free shipping*/}
+            {/*  </label>*/}
+            {/*</div>*/}
             {/* thumbnail input */}
             <div className="flex flex-col space-y-1 mb-8">
               <label htmlFor="thumbnail" className="tracking-wider">

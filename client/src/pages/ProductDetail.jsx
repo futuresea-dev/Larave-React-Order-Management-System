@@ -41,12 +41,10 @@ const ProductDetail = () => {
     
     const product = useSelector((state) => state.products.productDetails);
     const {
-        id,
         name,
         description,
         price,
         brand,
-        company,
         sku,
         images
     } = product;

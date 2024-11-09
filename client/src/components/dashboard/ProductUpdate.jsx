@@ -233,19 +233,19 @@ const ProductUpdate = () => {
               )}
             </div>
             {/* shipping input */}
-            <div className="flex items-center space-x-3 mb-8">
-              <input
-                type="checkbox"
-                name="shipping"
-                id="shipping"
-                onChange={() => formik.setFieldValue('shipping', !formik.values.shipping)}
-                value={formik.values.shipping}
-                className="form-checkbox"
-              />
-              <label htmlFor="shipping" className="tracking-wider">
-                Free shipping
-              </label>
-            </div>
+            {/*<div className="flex items-center space-x-3 mb-8">*/}
+            {/*  <input*/}
+            {/*    type="checkbox"*/}
+            {/*    name="shipping"*/}
+            {/*    id="shipping"*/}
+            {/*    onChange={() => formik.setFieldValue('shipping', !formik.values.shipping)}*/}
+            {/*    value={formik.values.shipping}*/}
+            {/*    className="form-checkbox"*/}
+            {/*  />*/}
+            {/*  <label htmlFor="shipping" className="tracking-wider">*/}
+            {/*    Free shipping*/}
+            {/*  </label>*/}
+            {/*</div>*/}
             <hr />
             {loading ? <TheSpinner /> : 
             <button

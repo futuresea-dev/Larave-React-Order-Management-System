@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class ProductController extends Controller
 {
@@ -22,8 +23,9 @@ class ProductController extends Controller
     public function index(): \Illuminate\Http\JsonResponse
     {
         // get all products
-        //
-        $products = Product::with('thumbnail')->get();
+        $products = Product::select('products.*', 'thumbnails.thumbnail')
+            ->join('thumbnails', 'products.id', '=', 'thumbnails.product_id')
+            ->get();
 
         return response()->json($products);
 
@@ -56,7 +58,7 @@ class ProductController extends Controller
         // get the request images
         if ($request->has('images')) {
 
-            $baseUrl = env('APP_URL') . '/storage/';
+            $baseUrl = env('APP_URL', 'http://localhost:8000') . '/storage/';
             // store the data in the products table
             $product = Product::create($fields);
             $id = $product->id;
@@ -73,7 +75,7 @@ class ProductController extends Controller
             // store the thumbnail in images table
             $image = new Image();
             $image->product_id = $id;
-            $image->image = $path;
+            $image->image = $baseUrl . $path;
             $image->save();
 
 
@@ -128,7 +130,7 @@ class ProductController extends Controller
      * @param Product $product
      * @return Response
      */
-    public function update(Request $request): Response
+    public function update(Request $request): bool
     {
         return Product::find($request->id)->update($request->all());
 
