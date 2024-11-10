@@ -1,6 +1,18 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import { Chart, LinearScale, CategoryScale, LineElement, Title, Tooltip, Legend, PointElement, RadialLinearScale } from 'chart.js';
 
+// Register the components you are using
+Chart.register(
+  LinearScale,  // For Y-axis (linear scale)
+  CategoryScale, // For X-axis (category scale)
+  LineElement,   // For line chart
+  Title,         // For chart title
+  Tooltip,       // For tooltips
+  Legend,         // For chart legend
+  PointElement,
+  RadialLinearScale
+);
 
 const LineChart = () => {
 
@@ -31,7 +43,7 @@ const LineChart = () => {
                 beginAtZero: true
             }
         }
-    }
+    };
 
     return (
         <div>
@@ -39,6 +51,5 @@ const LineChart = () => {
         </div>
     );
 };
-
 
 export default LineChart;

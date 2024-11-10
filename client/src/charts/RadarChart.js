@@ -1,6 +1,17 @@
 import React from 'react';
 import { Radar } from 'react-chartjs-2';
+import { Chart, LinearScale, CategoryScale, Title, Tooltip, Legend, PointElement, RadialLinearScale } from 'chart.js';
 
+// Register the components you are using
+Chart.register(
+  LinearScale,   // For Y-axis (linear scale)
+  CategoryScale, // For X-axis (category scale)
+  Title,         // For chart title
+  Tooltip,       // For tooltips
+  Legend,         // For chart legend
+  PointElement,
+  RadialLinearScale
+);
 
 const RadarChart = () => {
 
@@ -29,10 +40,14 @@ const RadarChart = () => {
         }],
     };
 
-    const  options = {
+    const options = {
         scales: {
-            y: {
-                beginAtZero: true
+            r: {  // Radial (Radar) scale configuration
+                min: 0,
+                max: 10,
+                ticks: {
+                    stepSize: 1
+                }
             }
         }
     };
@@ -43,6 +58,5 @@ const RadarChart = () => {
         </div>
     );
 };
-
 
 export default RadarChart;
