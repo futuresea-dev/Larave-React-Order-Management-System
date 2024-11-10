@@ -14,6 +14,7 @@ class AddMethodToRequestLogsTable extends Migration
     public function up()
     {
         Schema::table('request_logs', function (Blueprint $table) {
+            //
             $table->string('method')->after('endpoint');  // Adds 'method' column after 'endpoint'
         });
     }
